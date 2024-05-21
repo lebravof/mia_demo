@@ -3,7 +3,7 @@ import morgan from 'morgan';
 //import routerCategory from './category/routerCategory.js';
 //import routerFavorite from './favorite/routerFavorite.js';
 //import routerHistory from './history/routerHistory.js';
-import routerMaintenance from "./maintenance/routerMaintenance.js";
+//import routerMaintenance from "./maintenance/routerMaintenance.js";
 //import routerNewProduct from './new_product/routerNewProduct.js';
 //import routerProductDetail from './product_detail/routerProductDetail.js';
 //import routerSale from './sale/routerSale.js';
@@ -20,12 +20,12 @@ app.use(express.static('public'));
 //app.use(API, routerCategory);
 //app.use(API, routerFavorite);
 //app.use(API, routerHistory);
-app.use(API, routerMaintenance);
+//app.use("/api/v1", routerMaintenance);
 //app.use(API, routerNewProduct);
 //app.use(API, routerProductDetail);
 //app.use(API, routerSale);
 //app.use(API, routerSponsor);
-app.use('/photos', express.static('photos'));
+//app.use('/photos', express.static('photos'));
 
 app.use((request, response, next) =>{
     response.status(404).send(JSON.stringify({
