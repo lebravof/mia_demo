@@ -1,4 +1,4 @@
-import express, { request, response } from 'express';
+import express from 'express';
 import morgan from 'morgan';
 import routerCategory from './category/routerCategory.js';
 import routerFavorite from './favorite/routerFavorite.js';
