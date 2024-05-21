@@ -1,4 +1,4 @@
-import app from './src/mia_server.js';
+import { app } from './src/mia_server.js';
 import { PORT } from './config.js';
 
 app.listen(PORT, () => {
