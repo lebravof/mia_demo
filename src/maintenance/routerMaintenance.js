@@ -1,10 +1,10 @@
 import {Router} from 'express';
 import {ping, readMaintenance} from './controllerMaintenance.js';
 
-const router = Router();
+const routerMaintenance = Router();
 
-router.get('/ping', ping);
+routerMaintenance.get('/ping', ping);
 
-router.get('/maintenance', readMaintenance);
+routerMaintenance.get('/maintenance', readMaintenance);
 
-export default router;
+export default routerMaintenance;
