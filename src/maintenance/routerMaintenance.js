@@ -1,5 +1,5 @@
-import {Router} from 'express';
-import {ping, readMaintenance} from './controllerMaintenance.js';
+import {Router} from "express";
+import {ping, readMaintenance} from "./controllerMaintenance.js";
 
 const routerMaintenance = Router();
 

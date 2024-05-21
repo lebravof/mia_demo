@@ -1,5 +1,5 @@
-import { pool } from '../../db.js';
-import {fecha} from '../utilities/fecha.js';
+import { pool } from "../../db.js";
+import { fecha } from "../utilities/fecha.js";
 
 export const ping = async (req, res) => {
     try {
