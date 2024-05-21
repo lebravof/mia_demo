@@ -20,7 +20,7 @@ app.use(express.static('public'));
 //app.use(API, routerCategory);
 //app.use(API, routerFavorite);
 //app.use(API, routerHistory);
-app.use("/api/v1", routerMaintenance);
+app.use(API, routerMaintenance);
 //app.use(API, routerNewProduct);
 //app.use(API, routerProductDetail);
 //app.use(API, routerSale);
