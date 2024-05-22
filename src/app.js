@@ -9,8 +9,6 @@ import routerMaintenance from "./maintenance/routerMaintenance.js";
 //import routerSale from './sale/routerSale.js';
 //import routerSponsor from './sponsor/routerSponsor.js';
 
-import { API } from '../config.js';
-//throw new Error("Error de Prueba")
 const app = express();
 
 app.use(express.json());
