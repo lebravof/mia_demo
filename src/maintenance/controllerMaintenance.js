@@ -5,12 +5,8 @@ export const ping = async (req, res) => {
     try {
         console.log(`${fecha()} - ping`);
         const [result] = await pool.query('SELECT 1+1 AS result');
-        let myQuery = '';
-        let rows = null;
-        myQuery = 'SELECT name FROM tb_prueba WHERE id = 1';
-        rows = await pool.query(myQuery, [1]);
-        console.log(JSON.stringify(rows[0]));
-        res.status(200).send(JSON.stringify(rows[0]));
+        console.log(JSON.stringify(result));
+        res.status(200).send(JSON.stringify(result));
         console.log('ping 200');
     } catch (error) {
         return res.status(500).send(JSON.stringify({ "errorMessage": error.message  }));
