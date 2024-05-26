@@ -1,9 +1,9 @@
 import {Router} from 'express';
 import {readCategory, readProductsByCategory} from './controllerCategory.js';
 
-const router = Router();
+const routerCategory = Router();
 
-router.get('/category/:id', readCategory);
-router.get('/productsbycategory/:id', readProductsByCategory);
+routerCategory.get('/category/:id', readCategory);
+routerCategory.get('/productsbycategory/:id', readProductsByCategory);
 
-export default router;
+export default routerCategory;

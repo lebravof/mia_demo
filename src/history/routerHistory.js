@@ -1,8 +1,8 @@
 import {Router} from 'express';
 import {readHistory} from './controllerHistory.js';
 
-const router = Router();
+const routerHistory = Router();
 
-router.get('/history/:id', readHistory);
+routerHistory.get('/history/:id', readHistory);
 
-export default router;
+export default routerHistory;

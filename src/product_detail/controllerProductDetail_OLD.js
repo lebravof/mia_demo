@@ -12,10 +12,10 @@ export const readProductDetail = async (request, response) => {
         // SQL del Producto para variación PREDETERMINADA (idVariation = 0)ø
         myQuery = 'SELECT P.id_producto, P.nombre_producto, descripcion_producto, T.id_tienda, T.nombre_tienda, ';
         myQuery = myQuery + 'M.nombre_marca, C.nombre_categoria, P.producto_patrocinado, P.producto_oferta, ';
-        myQuery = myQuery + 'P.vencimiento_oferta, P.producto_nuevo, V.existencia_inventario, P.delivery, ';
+        myQuery = myQuery + 'P.vencimiento_oferta, P.producto_nuevo, V.existencia_inventario, P.ofrece_delivery, ';
         myQuery = myQuery + 'CASE WHEN EXISTS(SELECT 1 FROM tb_usuario_favorito WHERE usuario_id = ? AND producto_id = ?) THEN 1 ELSE 0 END favorite, ';
         myQuery = myQuery + 'V.bs_precio_lista, V.bs_precio_oferta, V.ref_precio_lista, V.ref_precio_oferta, ';
-        myQuery = myQuery + 'V.total_rating, V.total_usuario ';
+        myQuery = myQuery + 'V.suma_calificaciones, V.total_usuarios ';
         myQuery = myQuery + 'FROM tb_producto AS P ';
         myQuery = myQuery + 'JOIN tb_tienda AS T ON P.tienda_id = T.id_tienda ';
         myQuery = myQuery + 'JOIN tb_producto_marca AS M ON P.marca_id = M.id_marca ';
@@ -101,7 +101,7 @@ export const readProductVariation = async (request, response) => {
         let rows = null;
         // Busqueda de los datos de la Variacion
         myQuery = 'SELECT bs_precio_lista, bs_precio_oferta, ref_precio_lista, ref_precio_oferta, ';
-        myQuery = myQuery + 'total_rating, total_usuario ';
+        myQuery = myQuery + 'suma_calificaciones, total_usuarios ';
         myQuery = myQuery + 'FROM tb_producto_variacion ';
         myQuery = myQuery + 'WHERE id_producto_variacion = ?';
         rows = await pool.query(myQuery, [request.params.idVariation]);

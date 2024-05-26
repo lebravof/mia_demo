@@ -1,8 +1,8 @@
 import {Router} from 'express';
 import {readSponsor} from './controllerSponsor.js';
 
-const router = Router();
+const routerSponsor = Router();
 
-router.get('/sponsor', readSponsor);
+routerSponsor.get('/sponsor', readSponsor);
 
-export default router;
+export default routerSponsor;

@@ -1,9 +1,9 @@
 import {Router} from 'express';
 import {readProductDetail} from './controllerProductDetail.js';
 
-const router = Router();
+const routerProductDetail = Router();
 
-router.get('/product/:idProduct/user/:idUser/variation/:idVariation', readProductDetail);
-//router.get('/productvariation/:idVariation', readProductVariation);
+routerProductDetail.get('/product/:idProduct/user/:idUser/variation/:idVariation', readProductDetail);
+//routerProductDetail.get('/productvariation/:idVariation', readProductVariation);
 
-export default router;
+export default routerProductDetail;

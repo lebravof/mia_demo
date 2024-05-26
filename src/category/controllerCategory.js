@@ -2,8 +2,8 @@ import { pool } from '../../db.js';
 
 export const readCategory = async (request, response) => {
     try {
-        console.log('getCategory')
-        console.log(`Parametro: ${request.params.id}`)
+        //console.log('getCategory')
+        //console.log(`Parametro: ${request.params.id}`)
         let myQuery = '';
         let rows = [];
         const id_category = parseInt(request.params.id);
@@ -16,7 +16,7 @@ export const readCategory = async (request, response) => {
             myQuery = myQuery + 'ORDER BY nombre_categoria ASC LIMIT 50';
             rows = await pool.query(myQuery);
         } else {
-            myQuery = 'SELECT SUP.id_categoria, SUP.nombre_categoria, SUP.path_image_location ';
+            myQuery = 'SELECT SUP.id_categoria, SUP.nombre_categoria, SUP.image_path_location ';
             myQuery = myQuery + 'FROM tb_producto_categoria AS C ';
             myQuery = myQuery + 'INNER JOIN tb_producto_categoria AS SUP ON SUP.categoria_padre_id = C.id_categoria ';
             myQuery = myQuery + 'WHERE SUP.categoria_padre_id = ? ORDER BY nombre_categoria ASC LIMIT 50';
@@ -33,8 +33,8 @@ export const readCategory = async (request, response) => {
 
 export const readProductsByCategory = async (request, response) => {
     try {
-        console.log('getProductsByCategory')
-        console.log(`Categoria: ${request.params.id}`)
+        //console.log('getProductsByCategory')
+        //console.log(`Categoria: ${request.params.id}`)
         let myQuery = '';
         let rows = [];
         const id_category = parseInt(request.params.id);
@@ -42,7 +42,7 @@ export const readProductsByCategory = async (request, response) => {
             myQuery = 'SELECT P.id_producto, P.nombre_producto, T.nombre_tienda, P.producto_patrocinado, ';
             myQuery = myQuery + 'P.producto_oferta, P.vencimiento_oferta, P.producto_nuevo, V.existencia_inventario, ';
             myQuery = myQuery + 'P.delivery, I.image_path_location, V.bs_precio_lista, V.bs_precio_oferta, ';
-            myQuery = myQuery + 'V.ref_precio_lista, V.ref_precio_oferta, V.total_rating, V.total_usuario ';
+            myQuery = myQuery + 'V.ref_precio_lista, V.ref_precio_oferta, V.suma_calificaciones, V.total_usuarios ';
             myQuery = myQuery + 'FROM tb_producto AS P ';
             myQuery = myQuery + 'JOIN tb_producto_categoria AS C ON P.categoria_id = C.id_categoria ';
             myQuery = myQuery + 'JOIN tb_producto_imagen AS I ON P.id_producto = I.producto_id ';

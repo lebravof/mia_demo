@@ -2,11 +2,11 @@ import { pool } from '../../db.js';
 
 export const readSale= async (request, response) => {
     try {
-        console.log('getSaleProducts')
+        //console.log('getSaleProducts')
         let myQuery = '';
         let rows = [];
         myQuery = 'SELECT P.id_producto, P.nombre_producto, T.nombre_tienda, I.image_path_location, V.bs_precio_lista, ';
-        myQuery = myQuery + 'V.bs_precio_oferta, V.ref_precio_lista, V.ref_precio_oferta, V.total_rating, V.total_usuario ';
+        myQuery = myQuery + 'V.bs_precio_oferta, V.ref_precio_lista, V.ref_precio_oferta, V.suma_calificaciones, V.total_usuarios ';
         myQuery = myQuery + 'FROM tb_producto AS P ';
         myQuery = myQuery + 'JOIN tb_producto_imagen AS I ON P.id_producto = I.producto_id ';
         myQuery = myQuery + 'JOIN tb_producto_variacion AS V ON P.id_producto = V.producto_id ';

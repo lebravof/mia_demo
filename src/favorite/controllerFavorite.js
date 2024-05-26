@@ -2,13 +2,13 @@ import { pool } from '../../db.js';
 
 export const readFavorite= async (request, response) => {
     try {
-        console.log('getUsersFavoriteProducts');
-        console.log(`Parametro: ${request.params.id}`);
+        //console.log('getUsersFavoriteProducts');
+        //console.log(`Parametro: ${request.params.id}`);
         let myQuery = '';
         let rows = [];
         myQuery = 'SELECT P.id_producto, P.nombre_producto, P.producto_patrocinado, P.producto_oferta, P.vencimiento_oferta, P.producto_nuevo, ';
         myQuery = myQuery + 'V.existencia_inventario, P.delivery, I.image_path_location, V.bs_precio_lista, V.bs_precio_oferta, ';
-        myQuery = myQuery + 'V.ref_precio_lista, V.ref_precio_oferta, V.total_rating, V.total_usuario ';
+        myQuery = myQuery + 'V.ref_precio_lista, V.ref_precio_oferta, V.suma_calificaciones, V.total_usuarios ';
         myQuery = myQuery + 'FROM tb_usuario_favorito AS F ';
         myQuery = myQuery + 'JOIN tb_producto AS P ON P.id_producto = F.producto_id ';
         myQuery = myQuery + 'JOIN tb_producto_imagen AS I ON P.id_producto = I.producto_id ';

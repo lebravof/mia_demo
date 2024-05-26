@@ -1,8 +1,8 @@
 import {Router} from 'express';
 import {readSale} from './controllerSale.js';
 
-const router = Router();
+const routerSale = Router();
 
-router.get('/sale', readSale);
+routerSale.get('/sale', readSale);
 
-export default router;
+export default routerSale;

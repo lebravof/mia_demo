@@ -2,9 +2,8 @@ import { pool } from '../../db.js';
 
 export const readHistory = async (request, response) => {
     try {
-        
-        console.log('getUsersHistoryProducts')
-        console.log(`Parametro: ${request.params.id}`)
+        //console.log('getUsersHistoryProducts')
+        //console.log(`Parametro: ${request.params.id}`)
         let myQuery = '';
         let rows = [];
         myQuery = 'SELECT P.id_producto, P.nombre_producto, C.nombre_categoria, I.image_path_location, H.fecha_consulta FROM tb_usuario_historial AS H ';
