@@ -11,7 +11,7 @@ export const readCategory = async (request, response) => {
             id_category = 0;
         };
         if (id_category == 0) {
-            myQuery = 'SELECT id_categoria, nombre_categoria, path_image_location ';
+            myQuery = 'SELECT id_categoria, nombre_categoria, image_path_location ';
             myQuery = myQuery + 'FROM tb_producto_categoria WHERE categoria_padre_id IS NULL ';
             myQuery = myQuery + 'ORDER BY nombre_categoria ASC LIMIT 50';
             rows = await pool.query(myQuery);

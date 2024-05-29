@@ -6,6 +6,7 @@ import routerHistory from "./history/routerHistory.js";
 import routerMaintenance from "./maintenance/routerMaintenance.js";
 import routerNewProduct from "./new_product/routerNewProduct.js";
 import routerProductDetail from "./product_detail/routerProductDetail.js";
+import routerProductList from "./product_list/routerProductList.js";
 import routerSale from "./sale/routerSale.js";
 import routerSponsor from "./sponsor/routerSponsor.js";
 
@@ -22,6 +23,7 @@ app.use("/api/v1", routerHistory);
 app.use("/api/v1", routerMaintenance);
 app.use("/api/v1", routerNewProduct);
 app.use("/api/v1", routerProductDetail);
+app.use("/api/v1", routerProductList);
 app.use("/api/v1", routerSale);
 app.use("/api/v1", routerSponsor);
 app.use('/photos', express.static('photos'));
